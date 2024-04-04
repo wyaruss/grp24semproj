@@ -58,12 +58,9 @@ public class DoctorPatientView {
 			//EnterPatientIDView.display(); 
 		});
 		logOut.setOnAction(e -> {
-			//close the current window
-	        Stage stage = (Stage) logOut.getScene().getWindow();
-	        stage.close();
-	            
-	        //open patientView
-	        Login.display(); 
+	        	Stage stage = (Stage) logOut.getScene().getWindow();
+	        	stage.close();
+	        	Login.display(); 
 		});
 	}
 }
