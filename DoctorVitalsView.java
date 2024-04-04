@@ -62,7 +62,7 @@ public class DoctorVitalsView {
         		showAlert("All fields must be filled out.");
         	}
         	else {
-        		System.out.println("hello");
+        		//save data funcitonality
         	}
         });
 	}
