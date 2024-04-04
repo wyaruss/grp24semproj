@@ -51,7 +51,7 @@ public class Login {
 
 		Scene scene = new Scene(borderPane, 500, 500);
 		Stage window = new Stage();
-		window.setTitle("Patient View");
+		window.setTitle("Login");
 		window.setScene(scene);
 		window.show();
 		
