@@ -43,12 +43,18 @@ public class DoctorPatientView {
 			
 		//handle the button presses
 		historyButton.setOnAction(e -> { 
-			//ReceptionistView.display(); 
+			Stage stage = (Stage) logOut.getScene().getWindow();
+	       	 	stage.close();
+			DoctorHistoryView.display();
 		});
 		vitalsButton.setOnAction(e -> {
-			//TechnicianView.display(); 
+			Stage stage = (Stage) logOut.getScene().getWindow();
+	       	 	stage.close();
+			DoctorVitalsView.display(); 
 		});
 		physicalButton.setOnAction(e -> {
+			Stage stage = (Stage) logOut.getScene().getWindow();
+	       	 	stage.close();
 			//EnterPatientIDView.display(); 
 		});
 		logOut.setOnAction(e -> {
