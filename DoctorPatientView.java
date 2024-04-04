@@ -54,8 +54,8 @@ public class DoctorPatientView {
 		});
 		physicalButton.setOnAction(e -> {
 			Stage stage = (Stage) logOut.getScene().getWindow();
-	       	 	stage.close();
-			//EnterPatientIDView.display(); 
+	        	stage.close();
+			PhysicalView.display(); 
 		});
 		logOut.setOnAction(e -> {
 	        	Stage stage = (Stage) logOut.getScene().getWindow();
