@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-public class MainView {
+public class Login {
 	public static void display() {		
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
@@ -54,6 +54,13 @@ public class MainView {
 		window.setTitle("Patient View");
 		window.setScene(scene);
 		window.show();
+		
+		//handle when create account button is pressed
+		login.setOnAction(e -> {
+			Stage stage = (Stage) create.getScene().getWindow();
+			stage.close();
+			EnterPatientIDView.display(); 
+		});
 		
 		//handle when create account button is pressed
 		create.setOnAction(e -> {
