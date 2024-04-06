@@ -42,10 +42,11 @@ public class PatientHome {
 	    Button visitButton = new Button("Recent Visit");
 	    Button infoButton = new Button("Contact Information");
         Button logOut = new Button("Log Out");
+        Button sendMessage = new Button("Send Message");
 	       
         VBox.setMargin(title, new Insets(20, 0, 80, 0));
 	    VBox layout = new VBox(10);
-	    layout.getChildren().addAll(title, visitButton, infoButton);
+	    layout.getChildren().addAll(title, visitButton, infoButton, sendMessage);
 	    layout.setAlignment(Pos.CENTER);
 	        
         VBox logout = new VBox(10);
