@@ -96,7 +96,7 @@ public class CreateAccountView {
 			String filename = patientID + "_LoginInfo.txt";
 		
 			//check if patientID_PatientVitals.txt file exists
-		    String vitalsFilename = patientID + "_PatientVitals.txt";
+		    String vitalsFilename = patientID + "_Vitals.txt";
 		    File vitalsFile = new File(vitalsFilename);
 		    if (!vitalsFile.exists()) {
 		        showAlert("You must see a receptionist before creating an account.");
