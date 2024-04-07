@@ -46,14 +46,19 @@ public class DoctorVitalsView {
         input.setHgap(5);
         input.setVgap(5);
         input.setPadding(new Insets(25, 25, 25, 25));
+        
+        Label weightLabel = new Label("Weight: ");
+        Label heightLabel = new Label("Height: ");
+        Label bodyTempLabel = new Label("Body Temp: ");
+        Label bloodPressureLabel = new Label("Blood Pressure: ");
 
-        input.add(new Label("Weight: "), 0, 2);
+        input.add(weightLabel, 0, 2);
         input.add(weight, 1, 2);
-        input.add(new Label("Height: "), 0, 3);
+        input.add(heightLabel, 0, 3);
         input.add(height, 1, 3);
-        input.add(new Label("Body Temperature: "), 0, 4);
+        input.add(bodyTempLabel, 0, 4);
         input.add(bodyTemp, 1, 4);
-        input.add(new Label("Blood Pressure: "), 0, 5);
+        input.add(bloodPressureLabel, 0, 5);
         input.add(bloodPressure, 1, 5);
         input.add(updateButton, 1, 15);
         input.add(returnButton, 0, 15);
@@ -63,6 +68,25 @@ public class DoctorVitalsView {
         window.setTitle("Patient Vitals");
         window.setScene(scene);
         window.show();
+        
+        //----STYLING----
+        String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		input.getStyleClass().add("background");
+        
+		//Labels
+		weightLabel.getStyleClass().add("input-label");
+		heightLabel.getStyleClass().add("input-label");
+		bodyTempLabel.getStyleClass().add("input-label");
+		bloodPressureLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		updateButton.getStyleClass().add("button");
+		returnButton.getStyleClass().add("small-button");
+        
+        //----END-STYLING----
 
         returnButton.setOnAction(e -> {
             Stage stage = (Stage) returnButton.getScene().getWindow();
