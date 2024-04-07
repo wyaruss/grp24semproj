@@ -29,10 +29,14 @@ public class PhysicalView {
         input.setAlignment(Pos.CENTER);
 		input.setPadding(new Insets(25,25,25,25));
         
-        input.add(new Label("Notes from the physical:"), 0,1);
+		Label notesFromPhysicalLabel = new Label ("Notes from the physical: ");
+		Label medicationNameLabel = new Label ("Medication to send: "); 
+		Label reasonLabel = new Label ("Reason: "); 
+		
+        input.add(notesFromPhysicalLabel, 0,1);
         input.add(notesFromPhysical, 0, 2);
-        input.addRow(3, new Label("Medication to send:"), medicationName);
-        input.addRow(5, new Label("Reason:"), Reason);
+        input.addRow(3, medicationNameLabel, medicationName);
+        input.addRow(5, reasonLabel, Reason);
         input.add(enterButton, 1, 7);
         input.add(returnButton, 0, 7);  
         
@@ -41,6 +45,24 @@ public class PhysicalView {
 		window.setTitle("Patient Physical");
 		window.setScene(scene);
 		window.show();
+		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		input.getStyleClass().add("background");
+		
+		//Labels
+		notesFromPhysicalLabel.getStyleClass().add("input-label"); 
+		medicationNameLabel.getStyleClass().add("input-label"); 
+		reasonLabel.getStyleClass().add("input-label"); 
+	
+		//Buttons
+		enterButton.getStyleClass().add("button");
+		returnButton.getStyleClass().add("small-button"); 
+		
+		//----END STYLING----
         
         returnButton.setOnAction(e -> {
         	Stage stage = (Stage) returnButton.getScene().getWindow();
