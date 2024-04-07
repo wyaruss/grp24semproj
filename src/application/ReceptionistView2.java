@@ -42,15 +42,15 @@ public class ReceptionistView2 {
 		phState.setPrefColumnCount(14);
 		phZip.setPrefColumnCount(14);
 
+		Label info = new Label("CONTACT INFORMATION");
 		Label insuranceLabel = new Label("Insurance ID");
-		Label info = new Label("Contact Information");
 		Label emailLabel = new Label("Email");
 		Label phoneLabel = new Label("Phone number");
 		Label pAddressLabel = new Label("Patient Address");
 		Label pCityLabel = new Label("City");
 		Label pStateLabel = new Label("State");
 		Label pZipLabel = new Label("Zip");
-		Label phLabel = new Label("Pharmacy Information");
+		Label phLabel = new Label("PHARMACY INFORMATION");
 		Label phNameLabel = new Label("Pharmacy Name");
 		Label phAddressLabel = new Label("Address");
 		Label phCityLabel = new Label("City");
@@ -87,7 +87,6 @@ public class ReceptionistView2 {
 		pane.add(phZip, 1, 13);
 
 		Button enter = new Button("Save");
-		enter.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(enter, 1, 15);
 	    
 		BorderPane borderPane = new BorderPane();
@@ -98,6 +97,35 @@ public class ReceptionistView2 {
 		window.setTitle("Patient Contact Info");
 		window.setScene(scene);
 		window.show();
+		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		pane.getStyleClass().add("background");
+		
+		//Labels
+		info.getStyleClass().add("input-label");
+		insuranceLabel.getStyleClass().add("input-label");
+		emailLabel.getStyleClass().add("input-label");
+		phoneLabel.getStyleClass().add("input-label");
+		pAddressLabel.getStyleClass().add("input-label");
+		pCityLabel.getStyleClass().add("input-label");
+		pStateLabel.getStyleClass().add("input-label");
+		pZipLabel.getStyleClass().add("input-label");
+		
+		phLabel.getStyleClass().add("input-label");
+		phNameLabel.getStyleClass().add("input-label");
+		phAddressLabel.getStyleClass().add("input-label");
+		phCityLabel.getStyleClass().add("input-label");
+		phStateLabel.getStyleClass().add("input-label");
+		phZipLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		enter.getStyleClass().add("button");
+		
+		//----END STYLING----
 		
 		enter.setOnAction(e -> {
 			if (isAnyFieldEmpty(email.getText(), phone.getText(), pAddress.getText(), pCity.getText(),
