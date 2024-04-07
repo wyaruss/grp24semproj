@@ -57,9 +57,8 @@ public class Login {
 		window.setScene(scene);
 		window.show();
 		
-		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
-		
 		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
 		scene.getStylesheets().add(css);
 		
 		//Vbox/GridPane
