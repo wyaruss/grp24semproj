@@ -82,7 +82,7 @@ public class DoctorHistoryView {
 		
 		//Buttons
 		enter.getStyleClass().add("button");
-		returnButton.getStyleClass().add("button");
+		returnButton.getStyleClass().add("small-button");
 		
 		//----END STYLING----
 		
