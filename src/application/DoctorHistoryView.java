@@ -3,6 +3,7 @@ package application;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -50,11 +51,9 @@ public class DoctorHistoryView {
 		pane.add(immunizationText, 1, 6);
 
 		Button enter = new Button("Save");
-		enter.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(enter, 1, 9);
 		
 		Button returnButton = new Button("Return");
-		returnButton.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(returnButton, 0, 9);
 	    
 		BorderPane borderPane = new BorderPane();
@@ -65,6 +64,27 @@ public class DoctorHistoryView {
 		window.setTitle("Patient History");
 		window.setScene(scene);
 		window.show();
+		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//GridPane
+		pane.getStyleClass().add("background");
+		
+		
+		//Labels
+		allergyLabel.getStyleClass().add("input-label");
+		concernsLabel.getStyleClass().add("input-label");
+		issuesLabel.getStyleClass().add("input-label");
+		medicationLabel.getStyleClass().add("input-label");
+		immunizationLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		enter.getStyleClass().add("button");
+		returnButton.getStyleClass().add("button");
+		
+		//----END STYLING----
 		
 		//handle button presses
 		enter.setOnAction(e -> { 
