@@ -42,33 +42,54 @@ public class UpdatePatientInfoView {
         Button editButton = new Button("Edit");
         Button updateButton = new Button("Update");
         Button returnButton = new Button("Return");
+        
+        Label usernameLabel = new Label("Username: " + patientID);
+        Label insuranceLabel = new Label("Insurance ID");
+        Label pAddressLabel = new Label("Address");
+        Label pCityLabel = new Label("City");
+        Label pStateLabel = new Label("State");
+        Label pZipLabel = new Label("Zip");
+        
+        Label pInfoLabel = new Label ("CONTACT INFORMATION");
+        Label emailLabel = new Label("Email");
+        Label phoneLabel = new Label("Phone");
+        
+        Label phInfoLabel = new Label("PHARMACY INFORMATION");
+        Label phNameLabel = new Label("Pharmacy Name");
+        Label phAddressLabel = new Label("Address");
+        Label phCityLabel = new Label("City");
+        Label phStateLabel = new Label("State");
+        Label phZipLabel = new Label("Zip");
+        
 
-        input.add(new Label("Username: " + patientID), 0, 1);
-        input.add(new Label("Insurance ID"), 0, 2);
+        input.add(usernameLabel, 0, 1);
+        input.add(insuranceLabel, 0, 2);
         input.add(insurance, 1, 2);
-        input.add(new Label("Address"), 0, 4);
+        input.add(pAddressLabel, 0, 4);
         input.add(pAddress, 0, 5);
-        input.add(new Label("City"), 0, 6);
+        input.add(pCityLabel, 0, 6);
         input.add(pCity, 0, 7);
-        input.add(new Label("State"), 1, 6);
+        input.add(pStateLabel, 1, 6);
         input.add(pState, 1, 7);
-        input.add(new Label("Zip"), 2, 6);
+        input.add(pZipLabel, 2, 6);
         input.add(pZip, 2, 7);
-        input.add(new Label("Contact Information"), 0, 12);
-        input.add(new Label("Email"), 0, 13);
+        
+        input.add(pInfoLabel, 0, 12);
+        input.add(emailLabel, 0, 13);
         input.add(email, 0, 14);
-        input.add(new Label("Phone Number"), 1, 13);
+        input.add(phoneLabel, 1, 13);
         input.add(phone, 1, 14);
-        input.add(new Label("Pharmacy Information"), 0, 19);
-        input.add(new Label("Pharmacy Name"), 0, 20);
+        
+        input.add(phInfoLabel, 0, 19);
+        input.add(phNameLabel, 0, 20);
         input.add(phName, 0, 21);
-        input.add(new Label("Address"), 0, 22);
+        input.add(phAddressLabel, 0, 22);
         input.add(phAddress, 0, 23);
-        input.add(new Label("City"), 0, 24);
+        input.add(phCityLabel, 0, 24);
         input.add(phCity, 0, 25);
-        input.add(new Label("State"), 1, 24);
+        input.add(phStateLabel, 1, 24);
         input.add(phState, 1, 25);
-        input.add(new Label("Zip"), 2, 24);
+        input.add(phZipLabel, 2, 24);
         input.add(phZip, 2, 25);
         
         input.add(returnButton, 0, 28);
@@ -80,6 +101,39 @@ public class UpdatePatientInfoView {
         window.setTitle("Patient Information");
         window.setScene(scene);
         window.show();
+        
+        //----STYLING----
+        String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		input.getStyleClass().add("background");
+		
+		//Labels
+		usernameLabel.getStyleClass().add("input-label");
+		insuranceLabel.getStyleClass().add("input-label");
+		pAddressLabel.getStyleClass().add("input-label");
+		pCityLabel.getStyleClass().add("input-label");
+		pStateLabel.getStyleClass().add("input-label");
+		pZipLabel.getStyleClass().add("input-label");
+		
+		pInfoLabel.getStyleClass().add("input-label");
+		emailLabel.getStyleClass().add("input-label");
+		phoneLabel.getStyleClass().add("input-label");
+		
+		phInfoLabel.getStyleClass().add("input-label");
+		phNameLabel.getStyleClass().add("input-label");
+		phAddressLabel.getStyleClass().add("input-label");
+		phCityLabel.getStyleClass().add("input-label");
+		phStateLabel.getStyleClass().add("input-label");
+		phZipLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		returnButton.getStyleClass().add("button");
+		editButton.getStyleClass().add("button");
+		updateButton.getStyleClass().add("button");
+        
+        //----END STYLING----
 
         // Set the current contact information on this screen
         try(BufferedReader reader = new BufferedReader(new FileReader(patientID + "_ContactInfo.txt"))) {
