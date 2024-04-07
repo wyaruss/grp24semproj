@@ -64,6 +64,26 @@ public class PatientHome {
 		window.setScene(scene);
 		window.show();
 		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		logout.getStyleClass().add("background");
+		pane.getStyleClass().add("background");
+		borderPane.getStyleClass().add("background");
+		
+		//Labels
+		title.getStyleClass().add("title");
+		
+		//Buttons
+		visitButton.getStyleClass().add("button");
+		infoButton.getStyleClass().add("button");
+		sendMessage.getStyleClass().add("button");
+		logOut.getStyleClass().add("small-button");
+		
+		//----END STYLING----
+		
 		//handle button presses
 		visitButton.setOnAction(e -> {
 			Stage stage = (Stage) visitButton.getScene().getWindow();
