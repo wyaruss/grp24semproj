@@ -11,16 +11,31 @@
 	-fx-font-weight: bold;
 }
 
+/* For all the main buttons in a given view  */
 .button {
 	-fx-background-color: #2C3139;
 	-fx-border-color: #669CFF;
 	-fx-border-width: 1px; 
-	-fx-font-size: 17;
+	-fx-font-size: 15;
 	-fx-text-fill: #FFFFFF;
 }
-
 .button:hover {
 	-fx-background-color: #515182;
 	-fx-text-fill: #FFFFFF;
 	-fx-font-weight: bold;
 }
+
+/* For log-in/log-out buttons, return buttons, etc */
+.small-button {
+	-fx-background-color: #2C3139;
+	-fx-border-color: #669CFF;
+	-fx-border-width: 1px; 
+	-fx-font-size: 12;
+	-fx-text-fill: #FFFFFF;
+}
+.small-button:hover {
+	-fx-background-color: #515182;
+	-fx-text-fill: #FFFFFF;
+	-fx-font-weight: bold;
+}
+
