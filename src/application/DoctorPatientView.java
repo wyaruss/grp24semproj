@@ -61,6 +61,28 @@ public class DoctorPatientView {
 		window.setTitle("Doctor Home");
 		window.setScene(scene);
 		window.show();
+		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Vbox/GridPane
+		layout.getStyleClass().add("background");
+		logout.getStyleClass().add("background");
+		pane.getStyleClass().add("background");
+		borderPane.getStyleClass().add("background");
+		
+		//Labels
+		title.getStyleClass().add("title");
+		
+		//Buttons
+		historyButton.getStyleClass().add("button");
+		vitalsButton.getStyleClass().add("button");
+		physicalButton.getStyleClass().add("button");
+		messageButton.getStyleClass().add("button");
+		logOut.getStyleClass().add("small-button");
+		
+		//----END STYLING----
 			
 		//handle the button presses
 		historyButton.setOnAction(e -> { 
