@@ -46,11 +46,9 @@ public class CreateAccountView {
 		pane.add(accountLabel, 1, 20);
 		
 		Button create = new Button("Create Account");
-		create.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(create, 1, 7);
 		
 		Button goBack = new Button("Go Back");
-		goBack.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(goBack, 1, 22);
 
 		VBox vBox = new VBox(10);
@@ -67,6 +65,22 @@ public class CreateAccountView {
 		window.setTitle("Patient View");
 		window.setScene(scene);
 		window.show();
+		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Vbox/GridPane
+		vBox.getStyleClass().add("background");
+		pane.getStyleClass().add("background");
+		
+		//Labels 
+		title.getStyleClass().add("title");
+		
+		//Buttons
+		create.getStyleClass().add("button");
+		
+		//----END STYLING ----
 
 		//handle the button presses
 		goBack.setOnAction(e -> {
