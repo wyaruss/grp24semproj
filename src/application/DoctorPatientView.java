@@ -39,11 +39,12 @@ public class DoctorPatientView {
 	    Button historyButton = new Button("Patient History");
 	    Button vitalsButton = new Button("Vitals");
 	    Button physicalButton = new Button("Physical Test");
+	    Button messageButton = new Button("Send " + firstName + " a message");
         Button logOut = new Button("Log Out");
 	       
         VBox.setMargin(title, new Insets(20, 0, 80, 0));
 	    VBox layout = new VBox(10);
-	    layout.getChildren().addAll(title, historyButton, vitalsButton, physicalButton);
+	    layout.getChildren().addAll(title, historyButton, vitalsButton, physicalButton, messageButton);
 	    layout.setAlignment(Pos.CENTER);
 	        
         VBox logout = new VBox(10);
