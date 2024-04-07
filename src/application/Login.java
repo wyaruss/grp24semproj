@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -36,11 +37,9 @@ public class Login {
 		pane.add(accountLabel, 1, 20);
 
 	    Button login = new Button("Login");
-		login.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(login, 1, 5);
 		
 		Button create = new Button("Create Account");
-		create.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(create, 1, 22);
 
 		VBox vBox = new VBox(10);
@@ -57,6 +56,24 @@ public class Login {
 		window.setTitle("Login");
 		window.setScene(scene);
 		window.show();
+		
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		
+		//----STYLING----
+		scene.getStylesheets().add(css);
+		
+		//Vbox/GridPane
+		vBox.getStyleClass().add("background"); 
+		pane.getStyleClass().add("background"); 
+		
+		
+		//Labels
+		title.getStyleClass().add("title");
+		
+		//Buttons
+		login.getStyleClass().add("button");
+		
+		//----END STYLING----
 		
 		//handle when login account button is pressed
 		login.setOnAction(e -> {
