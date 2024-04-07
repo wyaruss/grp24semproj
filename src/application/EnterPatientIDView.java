@@ -36,17 +36,18 @@ public class EnterPatientIDView {
 		pane.add(submit, 5, 2);
 		
 		Button logOut = new Button("Logout");
-		pane.add(logOut, 5, 5);
-		
 
 		VBox vBox = new VBox(10);
 		vBox.getChildren().addAll(title);
 		vBox.setAlignment(Pos.CENTER);
-		vBox.setPadding(new Insets(70,0,0,0)); //top, right, bottom, left
+		vBox.setPadding(new Insets(100,0,0,0)); //top, right, bottom, left
 		 
 		BorderPane borderPane = new BorderPane();
 		borderPane.setCenter(pane);
 		borderPane.setTop(vBox);
+		borderPane.setBottom(logOut);
+		borderPane.setPadding(new Insets(0, 0, 40, 0 )); //top, right, bottom, left
+		borderPane.setAlignment(logOut, Pos.CENTER); 
 
 		Scene scene = new Scene(borderPane, 500, 500);
 		Stage window = new Stage();
@@ -58,7 +59,8 @@ public class EnterPatientIDView {
 		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
 		scene.getStylesheets().add(css);
 		
-		//Vbox/GridPane
+		//Panes
+		borderPane.getStyleClass().add("background");
 		vBox.getStyleClass().add("background");
 		pane.getStyleClass().add("background");
 		
