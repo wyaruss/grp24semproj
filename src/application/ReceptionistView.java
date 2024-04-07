@@ -31,15 +31,24 @@ public class ReceptionistView {
         input.setHgap(10);
         input.setAlignment(Pos.CENTER);
 		input.setPadding(new Insets(25,25,25,25));
+		
+		Label fNLabel = new Label("First Name: "); 
+		Label lNLabel = new Label("Last Name: "); 
+		Label dobLabel = new Label("DOB (MM/DD/YYYY): ");
+		Label ageLabel = new Label("Age: ");
+		Label weightLabel = new Label("Weight: ");
+		Label heightLabel = new Label("Height (feet.inches): ");
+		Label bodyTempLabel = new Label("Body Temperature: ");
+		Label bloodPressureLabel = new Label("Blood Pressure: ");
         
-		input.addRow(0, new Label("First Name:"), fN);
-		input.addRow(1, new Label("Last Name:"), lN);
-		input.addRow(2, new Label("DOB (MM/DD/YYYY):"), dob);
-        input.addRow(3, new Label("Age:"), age);
-        input.addRow(4, new Label("Weight:"), weight);
-        input.addRow(5, new Label("Height (feet.inches):"), height);
-        input.addRow(6, new Label("Body Temperature (°F):"), bodyTemp);
-        input.addRow(7, new Label("Blood Pressure:"), bloodPressure);
+		input.addRow(0, fNLabel, fN);
+		input.addRow(1, lNLabel, lN);
+		input.addRow(2, dobLabel, dob);
+        input.addRow(3, ageLabel, age);
+        input.addRow(4, weightLabel, weight);
+        input.addRow(5, heightLabel, height);
+        input.addRow(6, bodyTempLabel, bodyTemp);
+        input.addRow(7, bloodPressureLabel, bloodPressure);
         input.add(enterButton, 1, 5);
         input.add(returnButton, 2, 6);    
         
@@ -55,6 +64,30 @@ public class ReceptionistView {
 		window.setTitle("Receptionist Screen");
 		window.setScene(scene);
 		window.show();
+		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		stackPane.getStyleClass().add("background");
+		input.getStyleClass().add("background");
+		
+		//Labels
+		fNLabel.getStyleClass().add("input-label");
+		lNLabel.getStyleClass().add("input-label");
+		dobLabel.getStyleClass().add("input-label");
+		ageLabel.getStyleClass().add("input-label");
+		weightLabel.getStyleClass().add("input-label");
+		heightLabel.getStyleClass().add("input-label");
+		bodyTempLabel.getStyleClass().add("input-label");
+		bloodPressureLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		enterButton.getStyleClass().add("button");
+		returnButton.getStyleClass().add("small-button");
+		
+		//----END STYLING----
         
         returnButton.setOnAction(e -> {
         	Stage stage = (Stage) returnButton.getScene().getWindow();
