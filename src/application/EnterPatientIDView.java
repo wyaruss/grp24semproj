@@ -33,11 +33,9 @@ public class EnterPatientIDView {
 		pane.add(IDText, 1, 2);
 
 	    Button submit = new Button("Submit");
-		submit.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(submit, 5, 2);
 		
 		Button logOut = new Button("Logout");
-		logOut.setStyle("-fx-background-color: #78A8FF; -fx-border-color: #669CFF; -fx-border-width: 1px; -fx-font-size: 17");
 		pane.add(logOut, 5, 5);
 		
 
@@ -55,6 +53,24 @@ public class EnterPatientIDView {
 		window.setTitle("Enter Patient ID");
 		window.setScene(scene);
 		window.show();
+		
+		//----STYLING----
+		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Vbox/GridPane
+		vBox.getStyleClass().add("background");
+		pane.getStyleClass().add("background");
+		
+		//Labels 
+		title.getStyleClass().add("title");
+		IDLabel.getStyleClass().add("input-label"); 
+		
+		//Buttons
+		submit.getStyleClass().add("button");
+		logOut.getStyleClass().add("button");
+		
+		//----END STYLING----
 		
 		//handle when submit button is presses
 		submit.setOnAction(e -> {
