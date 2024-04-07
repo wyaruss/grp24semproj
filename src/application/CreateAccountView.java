@@ -76,6 +76,10 @@ public class CreateAccountView {
 		
 		//Labels 
 		title.getStyleClass().add("title");
+		fnLabel.getStyleClass().add("input-label"); 
+		lnLabel.getStyleClass().add("input-label"); 
+		dobLabel.getStyleClass().add("input-label"); 
+		passwordLabel.getStyleClass().add("input-label"); 
 		
 		//Buttons
 		create.getStyleClass().add("button");

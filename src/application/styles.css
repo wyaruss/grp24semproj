@@ -7,6 +7,10 @@
 	-fx-font-weight: bold;
 }
 
+.input-label {
+	-fx-font-weight: bold;
+}
+
 .button {
 	-fx-background-color: #2C3139;
 	-fx-border-color: #669CFF;

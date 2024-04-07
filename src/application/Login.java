@@ -65,9 +65,10 @@ public class Login {
 		vBox.getStyleClass().add("background"); 
 		pane.getStyleClass().add("background"); 
 		
-		
 		//Labels
 		title.getStyleClass().add("title");
+		usernameLabel.getStyleClass().add("input-label");
+		passwordLabel.getStyleClass().add("input-label");
 		
 		//Buttons
 		login.getStyleClass().add("button");
