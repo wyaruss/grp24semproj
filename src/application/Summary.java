@@ -46,10 +46,13 @@ public class Summary {
         medicationTextArea.setText(medication.isEmpty() ? "No medications" : medication);
         medicationTextArea.setEditable(false);
         medicationTextArea.setPrefSize(400, 200);
+        
+        Label summaryLabel = new Label ("Summary"); 
+        Label medicationsLabel = new Label ("Medications");
 
-        summaryGrid.add(new Label("Summary"), 0, 0);
+        summaryGrid.add(summaryLabel, 0, 0);
         summaryGrid.add(notesTextArea, 0, 1);
-        summaryGrid.add(new Label("Medications"), 0, 2);
+        summaryGrid.add(medicationsLabel, 0, 2);
         summaryGrid.add(medicationTextArea, 0, 3);
 
         Button returnButton = new Button("Return");
@@ -65,5 +68,21 @@ public class Summary {
         summaryStage.setTitle("Summary");
         summaryStage.setScene(scene);
         summaryStage.show();
+        
+        //----STYLING----
+        String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+        
+		//Panes
+		summaryGrid.getStyleClass().add("background");
+		
+		//Labels 
+		summaryLabel.getStyleClass().add("input-label");
+		medicationsLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		returnButton.getStyleClass().add("small-button");
+        
+        //----END STYLING----
     }
 }
