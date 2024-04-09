@@ -26,7 +26,7 @@ public class DoctorVitalsView {
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("Weight: ")) {
                     weight.setText(line.substring(8).trim());
-                } else if (line.startsWith("Height (feet.inches): ")) {
+                } else if (line.startsWith("Height: ")) {
                     height.setText(line.substring(8).trim());
                 } else if (line.startsWith("Body temperature: ")) {
                     bodyTemp.setText(line.substring(18).trim()); 
