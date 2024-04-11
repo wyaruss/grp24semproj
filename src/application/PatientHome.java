@@ -65,7 +65,7 @@ public class PatientHome {
 		window.show();
 		
 		//----STYLING----
-		String css = "C:\\Users\\sachi\\eclipse-workspace\\groupsemproject\\bin\\styles.css"; 
+		String css = application.Main.class.getResource("styles.css").toExternalForm();
 		scene.getStylesheets().add(css);
 		
 		//Panes

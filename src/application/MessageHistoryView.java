@@ -52,6 +52,22 @@ public class MessageHistoryView {
         window.setScene(scene);
         window.show();
 
+        //----STYLING----
+        String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		layout.getStyleClass().add("background");
+		
+		//Labels
+		titleLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		sendMessageButton.getStyleClass().add("button");
+		returnButton.getStyleClass().add("small-button");
+		
+		//----END STYLING----
+        
         // Handle sending a new message
         sendMessageButton.setOnAction(e -> {
             MessageComposeView.display(patientID, sender, recipient);

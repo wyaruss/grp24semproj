@@ -72,7 +72,6 @@ public class DoctorHistoryView {
 		//GridPane
 		pane.getStyleClass().add("background");
 		
-		
 		//Labels
 		allergyLabel.getStyleClass().add("input-label");
 		concernsLabel.getStyleClass().add("input-label");

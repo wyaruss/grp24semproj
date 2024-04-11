@@ -26,26 +26,43 @@ public class MessageComposeView {
 
         // Create components
         Label recipientLabel = new Label("Recipient:");
-        TextField recipientTextField = new TextField(patientID);
+        TextField recipientTextField = new TextField(recipient);
         Label messageLabel = new Label("Message:");
         TextArea messageTextArea = new TextArea();
-        Button sendButton = new Button("Send");
         Button returnButton = new Button("Return");
+        Button sendButton = new Button("Send");
 
         // Add components to the layout
         pane.add(recipientLabel, 0, 0);
         pane.add(recipientTextField, 1, 0);
         pane.add(messageLabel, 0, 1);
         pane.add(messageTextArea, 1, 1);
-        pane.add(sendButton, 0, 2);
-        pane.add(returnButton, 1, 2);
+        pane.add(returnButton, 0, 2);
+        pane.add(sendButton, 1, 2);
 
         // Create and display the scene
-        Scene scene = new Scene(pane, 500, 500);
+        Scene scene = new Scene(pane, 700, 700);
         Stage window = new Stage();
         window.setTitle("Compose Message");
         window.setScene(scene);
         window.show();
+        
+        //----STYLING----
+        String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		scene.getStylesheets().add(css);
+		
+		//Panes
+		pane.getStyleClass().add("background");
+		
+		//Labels
+		recipientLabel.getStyleClass().add("input-label");
+		messageLabel.getStyleClass().add("input-label");
+		
+		//Buttons
+		sendButton.getStyleClass().add("button");
+		returnButton.getStyleClass().add("small-button");
+        
+        //----END STYLING----
 
         // Handle sending the message
         sendButton.setOnAction(e -> {
