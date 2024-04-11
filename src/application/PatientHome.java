@@ -65,7 +65,7 @@ public class PatientHome {
 		window.show();
 		
 		//----STYLING----
-		String css = application.Main.class.getResource("styles.css").toExternalForm(); 
+		String css = "C:\\Users\\sachi\\eclipse-workspace\\groupsemproject\\bin\\styles.css"; 
 		scene.getStylesheets().add(css);
 		
 		//Panes
@@ -94,6 +94,11 @@ public class PatientHome {
 			Stage stage = (Stage) infoButton.getScene().getWindow();
 			stage.close(); 
 			UpdatePatientInfoView.display(patientID);
+		});
+		sendMessage.setOnAction(e -> {
+			Stage stage = (Stage) logOut.getScene().getWindow();
+			stage.close();
+			MessageHistoryView.display(patientID, patientID, "Doctor");
 		});
 		logOut.setOnAction(e -> {
 			Stage stage = (Stage) logOut.getScene().getWindow();
