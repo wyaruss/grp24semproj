@@ -187,7 +187,7 @@ public class ReceptionistView2 {
 	}
 	
 	//check to see if any fields are empty
-	static boolean isAnyFieldEmpty(String... fields) {
+	public static boolean isAnyFieldEmpty(String... fields) {
         for (String field : fields) {
             if (field.isEmpty()) {
                 return true;
