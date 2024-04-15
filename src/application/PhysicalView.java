@@ -112,7 +112,7 @@ public class PhysicalView {
         });
 	}
 	
-	static boolean isAnyFieldEmpty(String... fields) {
+	public static boolean isAnyFieldEmpty(String... fields) {
         for (String field : fields) {
             if (field.isEmpty()) {
                 return true;
@@ -122,13 +122,13 @@ public class PhysicalView {
     }
 	
 	//method to display an alert with a title and content
-		private static void showAlert(String title, String content) {
-			Alert alert = new Alert(Alert.AlertType.WARNING);
-			alert.setTitle(title);
-			alert.setHeaderText(null);
-			alert.setContentText(content);
-			alert.showAndWait();
-		}
+	private static void showAlert(String title, String content) {
+		Alert alert = new Alert(Alert.AlertType.WARNING);
+		alert.setTitle(title);
+		alert.setHeaderText(null);
+		alert.setContentText(content);
+		alert.showAndWait();
+	}
 	 
 
 	//function to save data into a file
