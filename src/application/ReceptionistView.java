@@ -164,7 +164,7 @@ public class ReceptionistView {
 		});
 	}
 	
-	static boolean isAnyFieldEmpty(String... fields) {
+	public static boolean isAnyFieldEmpty(String... fields) {
 	        for (String field : fields) {
 	            if (field.isEmpty()) {
 	                return true;
